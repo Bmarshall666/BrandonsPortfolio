@@ -1,8 +1,3 @@
-import React from 'react';
-import HydeReport from './components/HydeReport';
-import CadDevlopment from './components/CadDevelopment';
-import AngelCard from './components/AngelCard';
-
 
 function App() {
 
@@ -16,28 +11,23 @@ function App() {
       <section id="about">
         <h2>About Me</h2>
         <p>
-          Hi! I'm Brandon. I'm a enthusiastic web developer with a keen interest in creating dynamic and responsive web applications. 
-          I enjoy coding, problem-solving, and learning new technologies! My other hobbies include skating, and making great food!
+          Brief introduction about yourself, your skills, and your passion for web development.
         </p>
-      </section>
-
-      <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-          <li>HTML, CSS, JavaScript</li>
-          <li>React, Node.js</li>
-          <li>Responsive Design</li>
-          <li>Version Control (Git)</li>
-          <li>Problem Solving</li>
-        </ul>
       </section>
 
       <section id="projects">
         <h2>Projects</h2>
         <div>
-          <HydeReport />
-          <CadDevlopment />
-          <AngelCard />
+          <div>
+            <h3>Project One</h3>
+            <p>Short description of your project.</p>
+            <a href="#">View on GitHub</a>
+          </div>
+          <div>
+            <h3>Project Two</h3>
+            <p>Short description of your project.</p>
+            <a href="#">View on GitHub</a>
+          </div>
         </div>
       </section>
 
