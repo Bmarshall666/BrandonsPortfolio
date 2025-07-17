@@ -6,7 +6,6 @@ import NavigationBar from './components/NavigationBar.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <NavigationBar />
     <App />
   </StrictMode>,
 )

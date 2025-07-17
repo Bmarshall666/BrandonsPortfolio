@@ -23,21 +23,15 @@ const NavigationBar = () => {
     }, []);
     
   return (
-    <div className={scroll}>
-      <nav>
-        <ul className="nav-links">
-          <li className="nav-item">
-            <a href="about">About</a>
-          </li>
-          <li className="nav-item">
-            <a href="projects">Projects</a>
-          </li>
-          <li className="nav-item">
-            <a href="contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+   <nav className={scroll}>
+      <h2>BM</h2>
+      <ul className="nav-links">
+        <li className="nav-item"><a href="About">About</a></li>
+        <li className="nav-item"><a href="Projects">Projects</a></li>
+        <li className="nav-item"><a href="Skills">Skills</a></li>
+        <li className="nav-item"><a href="Contact">Contact</a></li>
+      </ul>
+    </nav>
   );
 };
 

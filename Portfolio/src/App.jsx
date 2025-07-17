@@ -1,58 +1,177 @@
-import React from 'react';
-import HydeReport from './components/HydeReport';
-import CadDevlopment from './components/CadDevelopment';
-import AngelCard from './components/AngelCard';
-
+import Project from "./components/Project.jsx";
+import "./App.css";
+import NavigationBar from "./components/NavigationBar.jsx";
 
 function App() {
 
+  const handleFocus = (event) => {
+      event.preventDefault();
+      // Find all sections in order
+      const sections = Array.from(document.querySelectorAll(".focusable"));
+      // Find the section currently in view (or closest to top)
+      const scrollY = window.scrollY;
+      const nextSection = sections.find(
+        (section) => section.offsetTop > scrollY + 10
+      );
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: "smooth" });
+      } else if (sections.length > 0) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+  }
+
   return (
     <div className="portfolio-container">
-      <header className="portfolio-header">
-        <h1>Brandon Marshall</h1>
-        <p className="portfolio-subtitle">Web Developer | Designer | Programmer</p>
-      </header>
+      <NavigationBar />
 
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-          Hi! I'm Brandon. I'm a enthusiastic web developer with a keen interest in creating dynamic and responsive web applications. 
-          I enjoy coding, problem-solving, and learning new technologies! My other hobbies include skating, and making great food!
-        </p>
-      </section>
-
-      <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-          <li>HTML, CSS, JavaScript</li>
-          <li>React, Node.js</li>
-          <li>Responsive Design</li>
-          <li>Version Control (Git)</li>
-          <li>Problem Solving</li>
-        </ul>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <div>
-          <HydeReport />
-          <CadDevlopment />
-          <AngelCard />
+      <section className="section main-section">
+        <h2>Brandon Marshall</h2>
+        <h1 className="portfolio-subtitle">Web Developer | Programmer</h1>
+        <button className="down-button" onClick={handleFocus}>
+          <img src="downArrow.svg" alt="Down Arrow" />
+        </button>
+        <div className="social-links">
+          <a href="https://www.linkedin.com/in/brandon-marshall-365a5b232/">
+            <img src="linkedin.svg" alt="LinkedIn" />
+          </a>
+          <a href="https://github.com/Bmarshall666">
+            <img src="github.svg" alt="github" />
+          </a>
         </div>
       </section>
 
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:brandonmarshall666@gmail.com">brandonmarshall666@gmail.com</a></p>
-        <p>LinkedIn: <a href="">Your LinkedIn</a></p>
+      <section className="section about-section focusable">
+        <h1>About Me</h1>
+        <h2>
+          Hi! I'm Brandon.
+        </h2>
+        <h3>
+          I'm a software developer with passion for creating efficient and user-friendly applications.
+        </h3>
+        <button className="down-button" onClick={handleFocus}>
+          <img src="downArrow.svg" alt="Down Arrow" />
+        </button>
       </section>
 
-      <footer style={{ borderTop: '1px solid #eee', paddingTop: 16, color: '#888', fontSize: 14 }}>
+      <section className="section skills-section focusable" >
+        <h2>Skills</h2>
+        <ul>
+          <li>
+            <div className="skill-item"> 
+              <h3>HTML</h3>
+              <img src="html.svg" alt="HTML" />
+            </div>
+          </li>
+          
+          <li>
+            <div className="skill-item">
+              <h3>JavaScript</h3>
+              <img src="javascript.svg" alt="JavaScript" />
+            </div>
+          </li>
+          <li>
+            <div className="skill-item">
+              <h3>C#</h3>
+              <img src="csharp.svg" alt="C#" />
+            </div>
+          </li>
+          <li>
+            <div className="skill-item">
+              <h3>.NET</h3>
+              <img src="dotnet.svg" alt=".NET" />
+            </div>
+          </li>
+          <li>
+            <div className="skill-item">
+              <h3>CSS</h3>
+              <img src="css3.svg" alt="CSS" />
+            </div>
+          </li>
+          <li>
+            <div className="skill-item">
+              <h3>React</h3>
+              <img src="react.svg" alt="React" />
+            </div>
+          </li>
+          <li>
+            <div className="skill-item">
+              <h3>Version Control </h3>
+              <img src="git.svg" alt="GIT" />
+            </div>
+          </li>
+        </ul>
+        <button className="down-button" onClick={handleFocus}>
+          <img src="downArrow.svg" alt="Down Arrow" />
+        </button>
+      </section>
+
+      <section className="section projects-section focusable">
+        <h2>Projects</h2>
+        <div className="projects-container">
+
+          <div className="project hyde-report" >
+            <Project 
+            Image="HydeReport.png"
+            Title="Hyde Report"
+            Description="A web application skaters to report on the conditon of the local skatepark."
+            SiteLink="https://hydereport.runasp.net/"
+            GithubLink="" />
+          </div>
+          
+          <div className="project angel-cards">
+            <Project 
+            Image="AngelCard.png"
+            Title="Angel Cards"
+            Description="A simple card reading application."
+            SiteLink="https://angelradiancecards.netlify.app/"
+            GithubLink="" />
+          </div>
+
+          <div className="project cad-development">
+            <Project 
+            Title="CAD Development" 
+            Description="Development of my CAD skills through various projects."
+            GithubLink="" />
+            </div>
+
+          <div className="project cad-development">
+            <Project 
+            Title="Coming Soon" 
+            Description="Web app for renting out dresses."
+            />
+          </div>
+        </div>
+        <button className="down-button" onClick={handleFocus}>
+          <img src="downArrow.svg" alt="Down Arrow" />
+        </button>
+      </section>
+
+      <section id="section contact-section focusable">
+        <h2>Contact</h2>
+        <p>
+          Email:{" "}
+          <a href="mailto:brandonmarshall666@gmail.com">
+            brandonmarshall666@gmail.com
+          </a>
+        </p>
+        <p>
+          LinkedIn: <a href="">Your LinkedIn</a>
+        </p>
+      </section>
+
+      <footer
+        style={{
+          borderTop: "1px solid #eee",
+          paddingTop: 16,
+          color: "#888",
+          fontSize: 14,
+        }}
+      >
         &copy; {new Date().getFullYear()} Your Name. All rights reserved.
       </footer>
     </div>
-
-  )
+  );
 }
 
-export default App
+
+export default App;

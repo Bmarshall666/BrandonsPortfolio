@@ -1,29 +1,41 @@
 .navigation-bar {
-  background-color: #333;
-  color: white;
-  padding: 10px;
+  position: fixed;
+  top: 0vh;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 0;
+  background: rgba(0, 0, 0, 0.721);
+  color: #ffffff;
   overflow: hidden;
-  transition: 0.2s ease-in-out;
+  z-index: 1000;
+  transition:
+    width 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 100%;
 
 }
-
 .navigation-bar-scrolled {
-  background-color: #333;
-  color: white;
-  padding: 10px;
+  position: fixed;
+  top: 0vh;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
-  top: 1vh;
+  background: rgba(0, 0, 0, 0.721);
+  color: #ffffff;
   overflow: hidden;
-  border-radius: 25rem;
-  transition: 0.2s ease-in-out;
+  z-index: 1000;
+  transition:
+    width 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    border-radius 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 50vw;
+  border-radius: 21rem;
+  padding: 0 2rem;
 }
 
 .navigation-bar ul {
@@ -33,6 +45,43 @@
 }
 
 .navigation-bar-scrolled ul {
+  
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navigation-bar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0 0.5rem;
+  margin: 1rem;
+}
+
+.navigation-bar a:hover {
+  color: #ff9800;
+}
+
+.navigation-bar h2 {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding:0 1rem ;
+
+}
+
+.navigation-bar-scrolled a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navigation-bar-scrolled a:hover {
+  color: #ff9800;
+}
+
+.navigation-bar-scrolled h2 {
   list-style: none;
   display: flex;
   gap: 20px;
